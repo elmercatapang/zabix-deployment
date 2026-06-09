@@ -33,6 +33,9 @@ apt-get install -y \
 zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz \
   | sudo -u postgres psql -d ${db_name}
 
+sudo -u postgres psql -d ${db_name} -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO ${db_user};"
+sudo -u postgres psql -d ${db_name} -c "GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO ${db_user};"
+
 # ── Zabbix server config ───────────────────────────────────────────────────────
 sed -i "s/^# DBPassword=.*/DBPassword=${db_password}/" /etc/zabbix/zabbix_server.conf
 sed -i "s/^DBName=.*/DBName=${db_name}/" /etc/zabbix/zabbix_server.conf
