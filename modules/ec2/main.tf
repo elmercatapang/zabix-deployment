@@ -52,6 +52,10 @@ resource "aws_instance" "zabbix" {
   })
 
   tags = merge(var.tags, { Name = "${var.name}-zabbix-server" })
+
+  lifecycle {
+    ignore_changes = [ami]
+  }
 }
 
 resource "aws_eip" "zabbix" {

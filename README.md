@@ -55,7 +55,7 @@ terraform apply
 
 After apply, Terraform outputs:
 - `zabbix_public_ip` — Elastic IP of the server
-- `zabbix_url` — `http://<ip>/zabbix` (default credentials: Admin / zabbix — change immediately)
+- `zabbix_url` — `http://<ip>/` (default credentials: Admin / zabbix — change immediately)
 - `ssh_command` — ready-to-run SSH command
 - `private_key_file` — path to the generated `.pem` file
 

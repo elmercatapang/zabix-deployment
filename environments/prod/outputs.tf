@@ -5,7 +5,7 @@ output "zabbix_public_ip" {
 
 output "zabbix_url" {
   description = "Zabbix web UI URL"
-  value       = "http://${module.ec2.public_ip}/zabbix"
+  value       = "http://${module.ec2.public_ip}/"
 }
 
 output "ssh_command" {
