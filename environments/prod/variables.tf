@@ -14,3 +14,8 @@ variable "ssh_allowed_cidrs" {
   description = "CIDRs allowed SSH access to the Zabbix server"
   type        = list(string)
 }
+
+variable "alert_sender_email" {
+  description = "Email address SES will send alerts from (must be verified before it can send)"
+  type        = string
+}
