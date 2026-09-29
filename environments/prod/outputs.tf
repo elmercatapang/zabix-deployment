@@ -16,3 +16,17 @@ output "ssh_command" {
 output "private_key_file" {
   value = module.ec2.private_key_file
 }
+
+output "ses_smtp_username" {
+  value = module.ses.smtp_username
+}
+
+output "ses_smtp_password" {
+  value     = module.ses.smtp_password
+  sensitive = true
+}
+
+output "ses_smtp_server" {
+  value = module.ses.smtp_server
+}
+

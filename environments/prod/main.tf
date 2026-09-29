@@ -31,3 +31,10 @@ module "ec2" {
   db_password       = var.db_password
   tags              = local.tags
 }
+
+module "ses" {
+  source = "../../modules/ses"
+
+  sender_email = var.alert_sender_email
+  tags         = local.tags
+}
